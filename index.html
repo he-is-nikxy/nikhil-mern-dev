@@ -3,96 +3,60 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nikhil Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+    <nav>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a id="home" href="#home">Home</a></li>
+            <li><a id="about" href="#about">About</a></li>
+            <li><a id="skills" href="#skills">Skills</a></li>
+            <li><a id="experience" href="#experience">Projects</a></li>
+            <a href="#contact"><button id="contact" class="login-button" href="#contact">
+                    Contact
+                </button></a>
+            <a href="./resume/NikhilKhemani-FullStackWebDeveloper.pdf"
+                download><button class="join-button">Resume</button></a>
+        </ul>
+    </nav>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <!-- <link rel="icon" type="image/x-icon" href="./Nikhil favicon.jpg"> -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./Nikhil favicon.jpg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./Nikhil favicon.jpg" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./Nikhil favicon.jpg" />
-    <link rel="manifest" href="./Nikhil favicon.jpg" />
-    <link rel="mask-icon" href="./Nikhil favicon.jpg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
 </head>
 
 <body>
-    <div id="loader">
-        <h1>DESIGN</h1>
-        <h1>INNOVATION</h1>
-        <h1>USER EXPERIENCE</h1>
-    </div>
-
-    <div class="flex-center">
-        <div class="menu-container">
-            <div class="plus flex-center">+</div>
-            <ul class="menu flex-center">
-                <li class="menu-item">
-                    <a id="home" class="nav-link" href="#home">
-                        <i class="fa fa-home"></i>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a id="about" class="nav-link" href="#about">
-                        <i class="fa fa-user"></i>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a id="resume" class="nav-link" href="#resume">
-                        <i class="ri-code-box-fill"></i>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a id="contact" class="nav-link" href="#contact">
-                        <i class="ri-contacts-book-3-fill"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
     <div id="main">
-        <div id="page" data-scroll>
-            <h1>
-                Hello folks!
-                <br />
-                Dive into my profile
-            </h1>
-            <h4>
-                NIKHIL KHEMANI ~ MERN stack Developer
-                <br />
-                <i class="ri-html5-fill"></i>
-                <i class="ri-css3-fill"></i>
-                <i class="ri-javascript-fill"></i>
-                <i class="ri-reactjs-line"></i>
-                <i class="ri-npmjs-line"></i>
-                <i class="ri-database-2-line"></i>
-                <i class="ri-github-fill"></i>
-                <i class="ri-stackshare-line"></i>
-            </h4>
-            <canvas></canvas>
-        </div>
-        <div id="page2" data-scroll></div>
-        <div id="page1" data-scroll>
-            <p>
-                <span>MERN Alchemist<br />where design meets functionality!</span><br /><br /><br />
-                I bring a dedicated focus to crafting dynamic and user-friendly
-                interfaces.<br />While currently gaining experience in the field, I'm
-                enthusiastic about contributing my skills to create impactful web
-                applications.
-            </p>
-        </div>
-        <div id="page3" data-scroll></div>
-        <div id="page4" data-scroll>
-            <h1 data-scroll data-scroll-speed="5">Full - Stack Developer</h1>
-            <div id="hero-shape">
-                <div id="hero-3"></div>
+        <div data-scroll data-scroll-speed="-5" id="page1">
+            <div class="bottom-page1">
+                <h1>NIKHIL KHEMANI</h1>
+                <div class="bottom-page1-inner">
+                    <h4>
+                        MERN stack developer skilled in creating full-stack applications using MongoDB, Express.js,
+                        React, and Node.js, handling both client-side and server-side development.
+                    </h4>
+                </div>
             </div>
+            <video src="./vids/3129957-uhd_3840_2160_25fps.mp4" autoplay loop muted></video>
         </div>
+
+        <div id="page2">
+            <h2>FULL-STACK DEVELOPER: Unveiling Insights for Informed Decisions</h2>
+            <h1>
+                I craft comprehensive web solutions as a MERN stack developer, combining front-end design with back-end
+                functionality using the MERN technologies.
+            </h1>
+        </div>
+
         <div id="page5" data-scroll data-scroll-speed="-2">
             <div id="center-page5">
                 <div id="left-page5">
@@ -101,7 +65,7 @@
                             <div class="spin-containerImg">
                                 <div class="shapeImg">
                                     <div class="bdImg">
-                                        <img id="nikImg" src="./Nikhil.png" alt="" />
+                                        <img id="nikImg" src="./imgs/Nikhil.png" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -111,263 +75,138 @@
                 <div id="right-page5">
                     <h1>NIKHIL KHEMANI</h1>
                     <h4>
-                        Seasoned developer proficient in React.js for dynamic UIs, Node.js
-                        and Express.js for server-side excellence, and MongoDB for
-                        efficient data handling. Specialized in crafting end-to-end
-                        applications that leverage the strengths of each technology stack
-                        for optimal performance and scalability.
+                        Seasoned developer proficient in React.js for dynamic UIs, Node.js and Express.js for
+                        server-side excellence, and MongoDB for efficient data handling. Specialized in crafting
+                        end-to-end applications that leverage the strengths of each technology stack for optimal
+                        performance and scalability.
                     </h4>
-                    <a target="_blank" href="https://drive.google.com/file/d/1ZTq8W62uF-zNL0qPRBf_imhXF85KYIsA/view?usp=sharing">
+                    <a target="_blank"
+                        href="./resume/NikhilKhemani-FullStackWebDeveloper.pdf"
+                        download>
                         <button>Download Resume</button>
                     </a>
                 </div>
             </div>
         </div>
-        <div id="page6" data-scroll="">
-            <div id="moving-text">
-                <div class="con">
-                    <h1>INNOVATION</h1>
-                    <div id="gola"></div>
-                    <h1>CREATIVE</h1>
-                    <div id="gola"></div>
-                    <h1>FUTURIZE</h1>
-                    <div id="gola"></div>
-                </div>
-                <div class="con">
-                    <h1>INNOVATION</h1>
-                    <div id="gola"></div>
-                    <h1>CREATIVE</h1>
-                    <div id="gola"></div>
-                    <h1>FUTURIZE</h1>
-                    <div id="gola"></div>
-                </div>
-                <div class="con">
-                    <h1>INNOVATION</h1>
-                    <div id="gola"></div>
-                    <h1>CREATIVE</h1>
-                    <div id="gola"></div>
-                    <h1>FUTURIZE</h1>
-                    <div id="gola"></div>
-                </div>
-            </div>
+
+        <div id="page4">
+            <h3>SOFT SKILLS:</h3>
+            <h1>
+                I excel in communication and teamwork, effectively collaborating with diverse teams to achieve project
+                goals. My adaptability allows me to thrive in dynamic environments and manage change efficiently. With
+                strong interpersonal skills, I build positive relationships and work well with others, while my
+                problem-solving abilities and excellent time management ensure efficient project execution and success.
+            </h1>
         </div>
 
-        <div id="page7" data-scroll>
-            <h1 id="projects">WORK HIGHLIGHTS</h1>
-            <div class="elem" data-img="images/nikhil-pulsefolio.png">
-                <a target="_blank" href="https://nikhil-pulsefolio.netlify.app/">
-                    <h2>Nikhil Pulsefolio</h2>
-                </a>
-                <div class="moving">
-                    <div class="blur"></div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="elem" data-img="images/sephora-clone.png">
-                <a target="_blank" href="https://nikhil-sephora-clone.netlify.app/">
-                    <h2>Sephora Clone</h2>
-                </a>
-                <div class="moving">
-                    <div class="blur"></div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="elem" data-img="images/gaming_website.avif">
-                <a target="_blank" href="https://nikhil-gaming-website.netlify.app/">
-                    <h2>Gaming Website</h2>
-                </a>
-                <div class="moving">
-                    <div class="blur"></div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="elem" data-img="images/apple-vision-pro.jpg">
-                <a target="_blank" href="https://nikxy-apple-vision-pro-clone.netlify.app/">
-                    <h2>Apple Vision PRO Clone</h2>
-                </a>
-                <div class="moving">
-                    <div class="blur"></div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="elem" data-img="images/sample-homepage.png">
-                <a target="_blank" href="https://nikhil-sample-homepage.netlify.app/">
-                    <h2>Sample Home Page</h2>
-                </a>
-                <div class="moving">
-                    <div class="blur"></div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                    <div class="moving-in">
-                        <h5>HTML</h5>
-                        <h5>CSS</h5>
-                        <h5>JAVASCRIPT</h5>
-                        <h5>REACT</h5>
-                        <h5>NODE.JS</h5>
-                        <h5>EXPRESS.JS</h5>
-                        <h5>MONGODB</h5>
-                        <h5>MONGOOSE</h5>
-                        <h5>GIT & GITHUB</h5>
-                    </div>
-                </div>
-            </div>
+        <div id="page6">
+            <h3>Tools:</h3>
+            <h1>
+                I utilize a variety of tools to enhance my development workflow, including version control systems like
+                Git for code management, integrated development environments (IDEs) such as Visual Studio Code for
+                coding, and collaboration platforms like GitHub for project coordination. I also leverage debugging
+                tools for troubleshooting and cloud services for deployment and scaling
+            </h1>
         </div>
+
+        <div id="page7">
+            <div class="page7-cir">
+                <div class="page7-cir-inner"></div>
+            </div>
+            <canvas></canvas>
+        </div>
+
         <div id="page8">
+            <div class="page8-bottom">
+                <h1>WHERE DESIGN MEETS FUNCTIONALITY!</h1>
+                <a target="_blank"
+                    href="./resume/NikhilKhemani-FullStackWebDeveloper.pdf"
+                    download>
+                    <button>HIRE ME</button>
+                </a>
+            </div>
+            <video src="./vids/3129671-uhd_3840_2160_30fps.mp4" autoplay loop muted></video>
+        </div>
+
+        <div id="page9">
+            <div id="container"></div>
+        </div>
+
+        <div id="page11">
+            <h1>WORK HIGHLIGHTS</h1>
+            <a href="https://nikhil-sephora-clone.netlify.app/" target="_blank">
+                <div class="page11-inner">
+                    <div class="left11">
+                        <img src="./imgs/sephora-clone.png" alt="" />
+                    </div>
+                    <div class="right11">
+                        <h4>SEPHORA.COM CLONE | MERN</h4>
+                        <h1>Developed full-stack web application for Sephora
+                            website clone using MERN stack, ensuring seamless
+                            functionality.</h1>
+                    </div>
+                </div>
+            </a>
+            <a href="https://nikhil-gaming-website.netlify.app/" target="_blank">
+                <div class="page11-inner">
+                    <div class="left11">
+                        <img src="./imgs/gaming_website.avif" alt="" />
+                    </div>
+                    <div class="right11">
+                        <h4>GAMING WEBSITE | HTML, CSS & JS</h4>
+                        <h1>Integrated animations and dynamic features to create
+                            a visually appealing and interactive gaming
+                            environment.</h1>
+                    </div>
+                </div>
+            </a>
+            <a href="https://nikhil-sample-homepage.netlify.app/" target="_blank">
+
+                <div class="page11-inner">
+                    <div class="left11">
+                        <img src="./imgs/sample-homepage.png" alt="" />
+                    </div>
+                    <div class="right11">
+                        <h4>
+                            SAMPLE HOME PAGE | REACT.JS
+                        </h4>
+                        <h1>
+                            Developed the Sample Home Page using React,
+                            aligning with project requirements for a functional
+                            and scalable web application.
+                        </h1>
+                    </div>
+                </div>
+            </a>
+            <a href="https://nikxy-apple-vision-pro-clone.netlify.app/" target="_blank">
+                <div class="page11-inner">
+                    <div class="left11">
+                        <img src="./imgs/apple-vision-pro.jpg" alt="" />
+                    </div>
+                    <div class="right11">
+                        <h4>APPLE VISION PRO CLONE | HTML, CSS & JS</h4>
+                        <h1>Constructed and optimized user interfaces for
+                            enhanced user engagement and experience.</h1>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div id="page12">
+            <!-- <div class="page12-inner">
+                <h1>Featured In</h1>
+                <p>Thrilled to have been featured in several prominent media <br> outlets and leading professionals across the world’s best <br> real estate and web3 institutions.</p>
+            </div> -->
+        </div>
+        <div id="page13">
             <div class="contact-container">
                 <div class="contact-me">
                     <h3>
-                        <i class="ri-mail-send-fill"></i> Email: heisnikxy@gmail.com
+                        <i class="ri-mail-send-fill"></i>
+                        <a href="mailto:heisnikxy@gmail.com">heisnikxy@gmail.com</a>
                     </h3>
                     <h3><i class="ri-phone-fill"></i> Contact No.: +91-9130214794</h3>
-                    <h3><i class="ri-map-pin-line"></i> Ahmedabad, Gujarat, India</h3>
+                    <h3><i class="ri-map-pin-line"></i> Ahmedabad, India</h3>
                     <a href="https://github.com/he-is-nikxy" target="_blank"><i class="ri-github-fill"></i> Github:
                         @he-is-nikxy
                         <i class="ri-link"></i></a>
@@ -375,7 +214,8 @@
                             class="ri-linkedin-box-fill"></i> LinkedIN: Nikhil Khemani
                         <i class="ri-link"></i></a>
                     <a href="https://www.instagram.com/he_is_nikxy/?next=%2F&hl=en" target="_blank"><i
-                            class="ri-instagram-line"></i> Instagram: @he_is_nikxy
+                            class="ri-instagram-line"></i>
+                        Instagram: @he_is_nikxy
                         <i class="ri-link"></i></a>
                 </div>
                 <div class="form-div">
@@ -399,28 +239,37 @@
             </div>
         </div>
 
-        <!-- <div id="page9">
-            <div id="containerr"></div>
-        </div> -->
-
-        <div id="page10"></div>
-    </div>
-
-    <div id="footer">
-        <h2>
-            < C L I C K - A N Y W H E R E />
-        </h2>
-        <div id="footer-div"></div>
-        <h1>Hire Me</h1>
-        <div id="footer-bottom"></div>
+        <div id="page14">
+            <a target="_blank" href="https://github.com/he-is-nikxy">
+                <div class="page14-inner">
+                    <h1>GitHub</h1>
+                    <i class="ri-arrow-right-up-line"></i>
+                    <div class="center14"></div>
+                </div>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/nikhil-khemani/">
+                <div class="page14-inner">
+                    <h1>LinkedIN</h1>
+                    <i class="ri-arrow-right-up-line"></i>
+                    <div class="center14"></div>
+                </div>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/he_is_nikxy/?next=%2F&hl=en">
+                <div class="page14-inner">
+                    <h1>Instagram</h1>
+                    <i class="ri-arrow-right-up-line"></i>
+                    <div class="center14"></div>
+                </div>
+            </a>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
-        integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+        integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
-        integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
+        integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
 </body>

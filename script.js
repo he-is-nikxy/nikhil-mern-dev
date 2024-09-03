@@ -1,232 +1,335 @@
 function loco() {
-    gsap.registerPlugin(ScrollTrigger);
-  
-    // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-  
-    const locoScroll = new LocomotiveScroll({
-      el: document.querySelector("#main"),
-      smooth: true
-    });
-    // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-    locoScroll.on("scroll", ScrollTrigger.update);
-  
-    // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
-    ScrollTrigger.scrollerProxy("#main", {
-      scrollTop(value) {
-        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-      }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-      getBoundingClientRect() {
-        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-      },
-      // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-      pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
-    });
-    // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  
-    // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-    ScrollTrigger.refresh();
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true
+  });
+  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+  });
+
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+  ScrollTrigger.refresh();
 
 
 
 
-    // Navbar Javascript Click Scroll
 
-    document.querySelector("#home").addEventListener("click", () => {
-      locoScroll.scrollTo(0)
-    })
+  // Navbar Javascript Click Scroll
 
-    document.querySelector("#about").addEventListener("click", () => {
-      locoScroll.scrollTo("#page5")
-    })
-    
-    document.querySelector("#resume").addEventListener("click", () => {
-      locoScroll.scrollTo("#page7")
-    })
+  document.querySelector("#home").addEventListener("click", () => {
+    locoScroll.scrollTo(0)
+  })
 
-    document.querySelector("#contact").addEventListener("click", () => {
-      locoScroll.scrollTo("#page8")
-    })
-    
-    document.querySelector("#page10").addEventListener("click", () => {
-      locoScroll.scrollTo("#page8")
-    })
-  
-  }
-  loco();
-  
-  
-  const canvas = document.querySelector("canvas");
+  document.querySelector("#about").addEventListener("click", () => {
+    locoScroll.scrollTo("#page5")
+  })
+
+  document.querySelector("#skills").addEventListener("click", () => {
+    locoScroll.scrollTo("#page9")
+  })
+
+  document.querySelector("#experience").addEventListener("click", () => {
+    locoScroll.scrollTo("#page11")
+  })
+
+  document.querySelector("#contact").addEventListener("click", () => {
+    locoScroll.scrollTo("#page13")
+  })
+
+}
+
+loco()
+
+
+var clutter = "";
+
+document.querySelector("#page2>h1").textContent.split("").forEach(function (dets) {
+  clutter += `<span>${dets}</span>`
+
+  document.querySelector("#page2>h1").innerHTML = clutter;
+})
+
+
+gsap.to("#page2>h1>span", {
+  scrollTrigger: {
+    trigger: `#page2>h1>span`,
+    start: `top bottom`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: .5,
+  },
+  stagger: .2,
+  color: `#fff`
+})
+
+
+
+
+
+
+
+
+var clutter = "";
+
+document.querySelector("#page4>h1").textContent.split("").forEach(function (dets) {
+  clutter += `<span>${dets}</span>`
+
+  document.querySelector("#page4>h1").innerHTML = clutter;
+})
+
+gsap.to("#page4>h1>span", {
+  scrollTrigger: {
+    trigger: `#page4>h1>span`,
+    start: `top bottom`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: .5,
+  },
+  stagger: .2,
+  color: `#fff`
+})
+
+
+
+
+
+
+
+
+var clutter = "";
+
+document.querySelector("#page6>h1").textContent.split("").forEach(function (dets) {
+  clutter += `<span>${dets}</span>`
+
+  document.querySelector("#page6>h1").innerHTML = clutter;
+})
+
+gsap.to("#page6>h1>span", {
+  scrollTrigger: {
+    trigger: `#page6>h1>span`,
+    start: `top bottom`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: .5,
+  },
+  stagger: .2,
+  color: `#fff`
+})
+
+
+
+
+
+
+function canvas2() {
+  const canvas = document.querySelector("#page7>canvas");
   const context = canvas.getContext("2d");
-  
+
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  
-  
+
+
   window.addEventListener("resize", function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     render();
   });
-  
+
   function files(index) {
     var data = `
-    https://zelt.app/assets/img/home/hero/sequence/1.webp
-  https://zelt.app/assets/img/home/hero/sequence/2.webp
-  https://zelt.app/assets/img/home/hero/sequence/3.webp
-  https://zelt.app/assets/img/home/hero/sequence/4.webp
-  https://zelt.app/assets/img/home/hero/sequence/5.webp
-  https://zelt.app/assets/img/home/hero/sequence/6.webp
-  https://zelt.app/assets/img/home/hero/sequence/7.webp
-  https://zelt.app/assets/img/home/hero/sequence/8.webp
-  https://zelt.app/assets/img/home/hero/sequence/9.webp
-  https://zelt.app/assets/img/home/hero/sequence/10.webp
-  https://zelt.app/assets/img/home/hero/sequence/11.webp
-  https://zelt.app/assets/img/home/hero/sequence/12.webp
-  https://zelt.app/assets/img/home/hero/sequence/13.webp
-  https://zelt.app/assets/img/home/hero/sequence/14.webp
-  https://zelt.app/assets/img/home/hero/sequence/15.webp
-  https://zelt.app/assets/img/home/hero/sequence/16.webp
-  https://zelt.app/assets/img/home/hero/sequence/17.webp
-  https://zelt.app/assets/img/home/hero/sequence/18.webp
-  https://zelt.app/assets/img/home/hero/sequence/19.webp
-  https://zelt.app/assets/img/home/hero/sequence/20.webp
-  https://zelt.app/assets/img/home/hero/sequence/21.webp
-  https://zelt.app/assets/img/home/hero/sequence/22.webp
-  https://zelt.app/assets/img/home/hero/sequence/23.webp
-  https://zelt.app/assets/img/home/hero/sequence/24.webp
-  https://zelt.app/assets/img/home/hero/sequence/25.webp
-  https://zelt.app/assets/img/home/hero/sequence/26.webp
-  https://zelt.app/assets/img/home/hero/sequence/27.webp
-  https://zelt.app/assets/img/home/hero/sequence/28.webp
-  https://zelt.app/assets/img/home/hero/sequence/29.webp
-  https://zelt.app/assets/img/home/hero/sequence/30.webp
-  https://zelt.app/assets/img/home/hero/sequence/31.webp
-  https://zelt.app/assets/img/home/hero/sequence/32.webp
-  https://zelt.app/assets/img/home/hero/sequence/33.webp
-  https://zelt.app/assets/img/home/hero/sequence/34.webp
-  https://zelt.app/assets/img/home/hero/sequence/35.webp
-  https://zelt.app/assets/img/home/hero/sequence/36.webp
-  https://zelt.app/assets/img/home/hero/sequence/37.webp
-  https://zelt.app/assets/img/home/hero/sequence/38.webp
-  https://zelt.app/assets/img/home/hero/sequence/39.webp
-  https://zelt.app/assets/img/home/hero/sequence/40.webp
-  https://zelt.app/assets/img/home/hero/sequence/41.webp
-  https://zelt.app/assets/img/home/hero/sequence/42.webp
-  https://zelt.app/assets/img/home/hero/sequence/43.webp
-  https://zelt.app/assets/img/home/hero/sequence/44.webp
-  https://zelt.app/assets/img/home/hero/sequence/45.webp
-  https://zelt.app/assets/img/home/hero/sequence/46.webp
-  https://zelt.app/assets/img/home/hero/sequence/47.webp
-  https://zelt.app/assets/img/home/hero/sequence/48.webp
-  https://zelt.app/assets/img/home/hero/sequence/49.webp
-  https://zelt.app/assets/img/home/hero/sequence/50.webp
-  https://zelt.app/assets/img/home/hero/sequence/51.webp
-  https://zelt.app/assets/img/home/hero/sequence/52.webp
-  https://zelt.app/assets/img/home/hero/sequence/53.webp
-  https://zelt.app/assets/img/home/hero/sequence/54.webp
-  https://zelt.app/assets/img/home/hero/sequence/55.webp
-  https://zelt.app/assets/img/home/hero/sequence/56.webp
-  https://zelt.app/assets/img/home/hero/sequence/57.webp
-  https://zelt.app/assets/img/home/hero/sequence/58.webp
-  https://zelt.app/assets/img/home/hero/sequence/59.webp
-  https://zelt.app/assets/img/home/hero/sequence/60.webp
-  https://zelt.app/assets/img/home/hero/sequence/61.webp
-  https://zelt.app/assets/img/home/hero/sequence/62.webp
-  https://zelt.app/assets/img/home/hero/sequence/63.webp
-  https://zelt.app/assets/img/home/hero/sequence/64.webp
-  https://zelt.app/assets/img/home/hero/sequence/65.webp
-  https://zelt.app/assets/img/home/hero/sequence/66.webp
-  https://zelt.app/assets/img/home/hero/sequence/67.webp
-  https://zelt.app/assets/img/home/hero/sequence/68.webp
-  https://zelt.app/assets/img/home/hero/sequence/69.webp
-  https://zelt.app/assets/img/home/hero/sequence/70.webp
-  https://zelt.app/assets/img/home/hero/sequence/71.webp
-  https://zelt.app/assets/img/home/hero/sequence/72.webp
-  https://zelt.app/assets/img/home/hero/sequence/73.webp
-  https://zelt.app/assets/img/home/hero/sequence/74.webp
-  https://zelt.app/assets/img/home/hero/sequence/75.webp
-  https://zelt.app/assets/img/home/hero/sequence/76.webp
-  https://zelt.app/assets/img/home/hero/sequence/77.webp
-  https://zelt.app/assets/img/home/hero/sequence/78.webp
-  https://zelt.app/assets/img/home/hero/sequence/79.webp
-  https://zelt.app/assets/img/home/hero/sequence/80.webp
-  https://zelt.app/assets/img/home/hero/sequence/81.webp
-  https://zelt.app/assets/img/home/hero/sequence/82.webp
-  https://zelt.app/assets/img/home/hero/sequence/83.webp
-  https://zelt.app/assets/img/home/hero/sequence/84.webp
-  https://zelt.app/assets/img/home/hero/sequence/85.webp
-  https://zelt.app/assets/img/home/hero/sequence/86.webp
-  https://zelt.app/assets/img/home/hero/sequence/87.webp
-  https://zelt.app/assets/img/home/hero/sequence/88.webp
-  https://zelt.app/assets/img/home/hero/sequence/89.webp
-  https://zelt.app/assets/img/home/hero/sequence/90.webp
-  https://zelt.app/assets/img/home/hero/sequence/91.webp
-  https://zelt.app/assets/img/home/hero/sequence/92.webp
-  https://zelt.app/assets/img/home/hero/sequence/93.webp
-  https://zelt.app/assets/img/home/hero/sequence/94.webp
-  https://zelt.app/assets/img/home/hero/sequence/95.webp
-  https://zelt.app/assets/img/home/hero/sequence/96.webp
-  https://zelt.app/assets/img/home/hero/sequence/97.webp
-  https://zelt.app/assets/img/home/hero/sequence/98.webp
-  https://zelt.app/assets/img/home/hero/sequence/99.webp
-  https://zelt.app/assets/img/home/hero/sequence/100.webp
-  https://zelt.app/assets/img/home/hero/sequence/101.webp
-  https://zelt.app/assets/img/home/hero/sequence/102.webp
-  https://zelt.app/assets/img/home/hero/sequence/103.webp
-  https://zelt.app/assets/img/home/hero/sequence/104.webp
-  https://zelt.app/assets/img/home/hero/sequence/105.webp
-  https://zelt.app/assets/img/home/hero/sequence/106.webp
-  https://zelt.app/assets/img/home/hero/sequence/107.webp
-  https://zelt.app/assets/img/home/hero/sequence/108.webp
-  https://zelt.app/assets/img/home/hero/sequence/109.webp
-  https://zelt.app/assets/img/home/hero/sequence/110.webp
-  https://zelt.app/assets/img/home/hero/sequence/111.webp
-  https://zelt.app/assets/img/home/hero/sequence/112.webp
-  https://zelt.app/assets/img/home/hero/sequence/113.webp
-  https://zelt.app/assets/img/home/hero/sequence/114.webp
-  https://zelt.app/assets/img/home/hero/sequence/115.webp
-  https://zelt.app/assets/img/home/hero/sequence/116.webp
-  https://zelt.app/assets/img/home/hero/sequence/117.webp
-  https://zelt.app/assets/img/home/hero/sequence/118.webp
-   `;
+
+https://thisismagma.com/assets/home/lore/seq/1.webp?2
+https://thisismagma.com/assets/home/lore/seq/2.webp?2
+https://thisismagma.com/assets/home/lore/seq/3.webp?2
+https://thisismagma.com/assets/home/lore/seq/4.webp?2
+https://thisismagma.com/assets/home/lore/seq/5.webp?2
+https://thisismagma.com/assets/home/lore/seq/6.webp?2
+https://thisismagma.com/assets/home/lore/seq/7.webp?2
+https://thisismagma.com/assets/home/lore/seq/8.webp?2
+https://thisismagma.com/assets/home/lore/seq/9.webp?2
+https://thisismagma.com/assets/home/lore/seq/10.webp?2
+https://thisismagma.com/assets/home/lore/seq/11.webp?2
+https://thisismagma.com/assets/home/lore/seq/12.webp?2
+https://thisismagma.com/assets/home/lore/seq/13.webp?2
+https://thisismagma.com/assets/home/lore/seq/14.webp?2
+https://thisismagma.com/assets/home/lore/seq/15.webp?2
+https://thisismagma.com/assets/home/lore/seq/16.webp?2
+https://thisismagma.com/assets/home/lore/seq/17.webp?2
+https://thisismagma.com/assets/home/lore/seq/18.webp?2
+https://thisismagma.com/assets/home/lore/seq/19.webp?2
+https://thisismagma.com/assets/home/lore/seq/20.webp?2
+https://thisismagma.com/assets/home/lore/seq/21.webp?2
+https://thisismagma.com/assets/home/lore/seq/22.webp?2
+https://thisismagma.com/assets/home/lore/seq/23.webp?2
+https://thisismagma.com/assets/home/lore/seq/24.webp?2
+https://thisismagma.com/assets/home/lore/seq/25.webp?2
+https://thisismagma.com/assets/home/lore/seq/26.webp?2
+https://thisismagma.com/assets/home/lore/seq/27.webp?2
+https://thisismagma.com/assets/home/lore/seq/28.webp?2
+https://thisismagma.com/assets/home/lore/seq/29.webp?2
+https://thisismagma.com/assets/home/lore/seq/30.webp?2
+https://thisismagma.com/assets/home/lore/seq/31.webp?2
+https://thisismagma.com/assets/home/lore/seq/32.webp?2
+https://thisismagma.com/assets/home/lore/seq/33.webp?2
+https://thisismagma.com/assets/home/lore/seq/34.webp?2
+https://thisismagma.com/assets/home/lore/seq/35.webp?2
+https://thisismagma.com/assets/home/lore/seq/36.webp?2
+https://thisismagma.com/assets/home/lore/seq/37.webp?2
+https://thisismagma.com/assets/home/lore/seq/38.webp?2
+https://thisismagma.com/assets/home/lore/seq/39.webp?2
+https://thisismagma.com/assets/home/lore/seq/40.webp?2
+https://thisismagma.com/assets/home/lore/seq/41.webp?2
+https://thisismagma.com/assets/home/lore/seq/42.webp?2
+https://thisismagma.com/assets/home/lore/seq/43.webp?2
+https://thisismagma.com/assets/home/lore/seq/44.webp?2
+https://thisismagma.com/assets/home/lore/seq/45.webp?2
+https://thisismagma.com/assets/home/lore/seq/46.webp?2
+https://thisismagma.com/assets/home/lore/seq/47.webp?2
+https://thisismagma.com/assets/home/lore/seq/48.webp?2
+https://thisismagma.com/assets/home/lore/seq/49.webp?2
+https://thisismagma.com/assets/home/lore/seq/50.webp?2
+https://thisismagma.com/assets/home/lore/seq/51.webp?2
+https://thisismagma.com/assets/home/lore/seq/52.webp?2
+https://thisismagma.com/assets/home/lore/seq/53.webp?2
+https://thisismagma.com/assets/home/lore/seq/54.webp?2
+https://thisismagma.com/assets/home/lore/seq/55.webp?2
+https://thisismagma.com/assets/home/lore/seq/56.webp?2
+https://thisismagma.com/assets/home/lore/seq/57.webp?2
+https://thisismagma.com/assets/home/lore/seq/58.webp?2
+https://thisismagma.com/assets/home/lore/seq/59.webp?2
+https://thisismagma.com/assets/home/lore/seq/60.webp?2
+https://thisismagma.com/assets/home/lore/seq/61.webp?2
+https://thisismagma.com/assets/home/lore/seq/62.webp?2
+https://thisismagma.com/assets/home/lore/seq/63.webp?2
+https://thisismagma.com/assets/home/lore/seq/64.webp?2
+https://thisismagma.com/assets/home/lore/seq/65.webp?2
+https://thisismagma.com/assets/home/lore/seq/66.webp?2
+https://thisismagma.com/assets/home/lore/seq/67.webp?2
+https://thisismagma.com/assets/home/lore/seq/68.webp?2
+https://thisismagma.com/assets/home/lore/seq/69.webp?2
+https://thisismagma.com/assets/home/lore/seq/70.webp?2
+https://thisismagma.com/assets/home/lore/seq/71.webp?2
+https://thisismagma.com/assets/home/lore/seq/72.webp?2
+https://thisismagma.com/assets/home/lore/seq/73.webp?2
+https://thisismagma.com/assets/home/lore/seq/74.webp?2
+https://thisismagma.com/assets/home/lore/seq/75.webp?2
+https://thisismagma.com/assets/home/lore/seq/76.webp?2
+https://thisismagma.com/assets/home/lore/seq/77.webp?2
+https://thisismagma.com/assets/home/lore/seq/78.webp?2
+https://thisismagma.com/assets/home/lore/seq/79.webp?2
+https://thisismagma.com/assets/home/lore/seq/80.webp?2
+https://thisismagma.com/assets/home/lore/seq/81.webp?2
+https://thisismagma.com/assets/home/lore/seq/82.webp?2
+https://thisismagma.com/assets/home/lore/seq/83.webp?2
+https://thisismagma.com/assets/home/lore/seq/84.webp?2
+https://thisismagma.com/assets/home/lore/seq/85.webp?2
+https://thisismagma.com/assets/home/lore/seq/86.webp?2
+https://thisismagma.com/assets/home/lore/seq/87.webp?2
+https://thisismagma.com/assets/home/lore/seq/88.webp?2
+https://thisismagma.com/assets/home/lore/seq/89.webp?2
+https://thisismagma.com/assets/home/lore/seq/90.webp?2
+https://thisismagma.com/assets/home/lore/seq/91.webp?2
+https://thisismagma.com/assets/home/lore/seq/92.webp?2
+https://thisismagma.com/assets/home/lore/seq/93.webp?2
+https://thisismagma.com/assets/home/lore/seq/94.webp?2
+https://thisismagma.com/assets/home/lore/seq/95.webp?2
+https://thisismagma.com/assets/home/lore/seq/96.webp?2
+https://thisismagma.com/assets/home/lore/seq/97.webp?2
+https://thisismagma.com/assets/home/lore/seq/98.webp?2
+https://thisismagma.com/assets/home/lore/seq/99.webp?2
+https://thisismagma.com/assets/home/lore/seq/100.webp?2
+https://thisismagma.com/assets/home/lore/seq/101.webp?2
+https://thisismagma.com/assets/home/lore/seq/102.webp?2
+https://thisismagma.com/assets/home/lore/seq/103.webp?2
+https://thisismagma.com/assets/home/lore/seq/104.webp?2
+https://thisismagma.com/assets/home/lore/seq/105.webp?2
+https://thisismagma.com/assets/home/lore/seq/106.webp?2
+https://thisismagma.com/assets/home/lore/seq/107.webp?2
+https://thisismagma.com/assets/home/lore/seq/108.webp?2
+https://thisismagma.com/assets/home/lore/seq/109.webp?2
+https://thisismagma.com/assets/home/lore/seq/110.webp?2
+https://thisismagma.com/assets/home/lore/seq/111.webp?2
+https://thisismagma.com/assets/home/lore/seq/112.webp?2
+https://thisismagma.com/assets/home/lore/seq/113.webp?2
+https://thisismagma.com/assets/home/lore/seq/114.webp?2
+https://thisismagma.com/assets/home/lore/seq/115.webp?2
+https://thisismagma.com/assets/home/lore/seq/116.webp?2
+https://thisismagma.com/assets/home/lore/seq/117.webp?2
+https://thisismagma.com/assets/home/lore/seq/118.webp?2
+https://thisismagma.com/assets/home/lore/seq/119.webp?2
+https://thisismagma.com/assets/home/lore/seq/120.webp?2
+https://thisismagma.com/assets/home/lore/seq/121.webp?2
+https://thisismagma.com/assets/home/lore/seq/122.webp?2
+https://thisismagma.com/assets/home/lore/seq/123.webp?2
+https://thisismagma.com/assets/home/lore/seq/124.webp?2
+https://thisismagma.com/assets/home/lore/seq/125.webp?2
+https://thisismagma.com/assets/home/lore/seq/126.webp?2
+https://thisismagma.com/assets/home/lore/seq/127.webp?2
+https://thisismagma.com/assets/home/lore/seq/128.webp?2
+https://thisismagma.com/assets/home/lore/seq/129.webp?2
+https://thisismagma.com/assets/home/lore/seq/130.webp?2
+https://thisismagma.com/assets/home/lore/seq/131.webp?2
+https://thisismagma.com/assets/home/lore/seq/132.webp?2
+https://thisismagma.com/assets/home/lore/seq/133.webp?2
+https://thisismagma.com/assets/home/lore/seq/134.webp?2
+https://thisismagma.com/assets/home/lore/seq/135.webp?2
+https://thisismagma.com/assets/home/lore/seq/136.webp?2
+
+`;
     return data.split("\n")[index];
   }
-  
-  const frameCount = 118;
-  
-  
+
+  const frameCount = 136;
+
   const images = [];
   const imageSeq = {
     frame: 1,
   };
-  
+
   for (let i = 0; i < frameCount; i++) {
     const img = new Image();
     img.src = files(i);
     images.push(img);
   }
-  
+
   gsap.to(imageSeq, {
     frame: frameCount - 1,
     snap: "frame",
     ease: `none`,
     scrollTrigger: {
-      scrub: 0.15,
-      trigger: `#page>canvas`,
+      scrub: .5,
+      trigger: `#page7`,
       start: `top top`,
-      end: `300% top`,
+      end: `250% top`,
       scroller: `#main`,
     },
     onUpdate: render,
   });
-  
+
   images[1].onload = render;
-  
+
   function render() {
     scaleImage(images[imageSeq.frame], context);
   }
-  
+
   function scaleImage(img, ctx) {
     var canvas = ctx.canvas;
     var hRatio = canvas.width / img.width;
@@ -248,44 +351,40 @@ function loco() {
     );
   }
   ScrollTrigger.create({
-    trigger: "#page>canvas",
+
+    trigger: "#page7",
     pin: true,
-    // markers:true,
     scroller: `#main`,
     start: `top top`,
-    end: `300% top`,
+    end: `250% top`,
   });
-
-
-
-
-
-// Navbar Javascript
-
-  const plusButton = document.querySelector(".plus");
-const menuContainer = document.querySelector(".menu-container");
-
-plusButton.onclick = () => {
-    menuContainer.classList.toggle("active");
 }
+canvas2()
 
 
 
+gsap.to(".page7-cir", {
+  scrollTrigger: {
+    trigger: `.page7-cir`,
+    start: `top center`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: .5
+  },
+  scale: 1.5
+})
 
 
-// Page 7 Projects Javascript
 
-var elems = document.querySelectorAll(".elem")
-var page7 = document.querySelector("#page7")
-
-elems.forEach((ele) => {
-  ele.addEventListener("mouseenter", () => {
-    var bgimg = ele.getAttribute("data-img")
-    page7.style.backgroundImage = `url(${bgimg})`
-    // console.log(bgimg)
-    // console.log(page7)
-  })
-     
+gsap.to(".page7-cir-inner", {
+  scrollTrigger: {
+    trigger: `.page7-cir-inner`,
+    start: `top center`,
+    end: `bottom top`,
+    scroller: `#main`,
+    scrub: .5
+  },
+  backgroundColor: `#0a3bce91`,
 })
 
 
@@ -294,15 +393,91 @@ elems.forEach((ele) => {
 
 
 
-// Loader Javascript
 
-function loaderAnimation() {
-  var loader = document.querySelector("#loader")
-  setTimeout(function () {
-      loader.style.top = "-100%"
-  }, 4200)
-}
-loaderAnimation();
+// Page 9
+
+$(function () {
+
+  $('#container').highcharts({
+
+    chart: {
+      polar: true,
+      type: 'line'
+    },
+    credits: {
+      enabled: false
+    },
+    title: {
+      text: 'Skill Breakdown'
+    },
+
+    pane: {
+      startAngle: 0,
+      endAngle: 360
+    },
+
+    xAxis: {
+      type: 'category',
+      tickInterval: 1,
+      categories: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Python'],
+      min: 0,
+      max: 8,
+      tickmarkPlacement: 'on',
+
+      lineWidth: 0,
+      labels: {
+        formatter: function () {
+          return this.value
+        }
+      },
+
+    },
+    tooltip: {
+      shared: true,
+      useHTML: true,
+      headerFormat: '<div class="newTip"><big>{point.key}</big>' + '<br/>',
+      pointFormat: '{point.y} / 5.0',
+      footerFormat: '</div>',
+      valueDecimals: 1
+    },
+    yAxis: {
+      gridLineInterpolation: 'polygon',
+      min: 0,
+      max: 5,
+      tickInterval: 1,
+      minorTickInterval: 0.5,
+      showLastLabel: 'true',
+      labels: {
+        x: 8,
+        style: {
+          color: '#000',
+          textShadow: '1px 1px 0px #fff',
+          display: "inline-block"
+        }
+      },
+
+    },
+
+    plotOptions: {
+      series: {
+        pointStart: 0,
+        pointInterval: 1,
+
+      },
+      column: {
+        pointPadding: 0,
+        groupPadding: 0
+      }
+    },
+
+    series: [{
+      type: 'area',
+      name: 'Skills',
+      data: [4.5, 4.2, 4.7, 4, 4, 4.2, 4.5, 4],
+      pointPlacement: "on"
+    }]
+  });
+});
 
 
 
@@ -311,92 +486,20 @@ loaderAnimation();
 
 
 
+// Navbar
 
 
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
 
+hamburger.addEventListener('click', () => {
+  //Animate Links
+  navLinks.classList.toggle("open");
+  links.forEach(link => {
+    link.classList.toggle("fade");
+  });
 
-
-// // Page 9
-
-// $(function () {
-
-//   $('#containerr').highcharts({
-
-//     chart: {
-//       polar: true,
-//       type: 'line'
-//     },
-//     credits: {
-//       enabled: false
-//     },
-//     title: {
-//       text: 'Skill Breakdown'
-//     },
-
-//     pane: {
-//       startAngle: 0,
-//       endAngle: 360
-//     },
-
-//     xAxis: {
-//       type: 'category',
-//       tickInterval: 1,
-//       categories: ['Python', 'SQL', 'HTML, CSS, JS', 'R', 'JAVA', 'PHP', 'Dot.Net', 'C#'],
-//       min: 0,
-//       max: 8,
-//       tickmarkPlacement: 'on',
-
-//       lineWidth: 0,
-//       labels: {
-//         formatter: function () {
-//           return this.value
-//         }
-//       },
-
-//     },
-//     tooltip: {
-//       shared: true,
-//       useHTML: true,
-//       headerFormat: '<div class="newTip"><big>{point.key}</big>' + '<br/>',
-//       pointFormat: '{point.y} / 5.0',
-//       footerFormat: '</div>',
-//       valueDecimals: 1
-//     },
-//     yAxis: {
-//       gridLineInterpolation: 'polygon',
-//       min: 0,
-//       max: 5,
-//       tickInterval: 1,
-//       minorTickInterval: 0.5,
-//       showLastLabel: 'true',
-//       labels: {
-//         x: 8,
-//         style: {
-//           color: '#000',
-//           textShadow: '1px 1px 0px #fff',
-//           display: "inline-block"
-//         }
-//       },
-
-//     },
-
-//     plotOptions: {
-//       series: {
-//         pointStart: 0,
-//         pointInterval: 1,
-
-//       },
-//       column: {
-//         pointPadding: 0,
-//         groupPadding: 0
-//       }
-//     },
-
-//     series: [{
-//       type: 'area',
-//       name: 'Skills',
-//       data: [5, 4.5, 3.4, 4, 4.5, 4.1, 4.3, 4],
-//       pointPlacement: "on"
-//     }]
-//   });
-// });
+  //Hamburger Animation
+  hamburger.classList.toggle("toggle");
+});
