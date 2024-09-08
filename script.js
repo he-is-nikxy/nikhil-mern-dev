@@ -54,6 +54,10 @@ function loco() {
     locoScroll.scrollTo("#page13")
   })
 
+  document.querySelector("#hire-me").addEventListener("click", () => {
+    locoScroll.scrollTo("#page13")
+  })
+
 }
 
 loco()
@@ -503,3 +507,40 @@ hamburger.addEventListener('click', () => {
   //Hamburger Animation
   hamburger.classList.toggle("toggle");
 });
+
+
+
+
+
+
+
+
+// Download Resume 
+
+function downloadResume() {
+  // Open the resume in a new tab
+  const resumeLink = document.getElementById("resume-link").href;
+  window.open(resumeLink, "_blank");
+  
+  // Download the resume
+  const a = document.createElement('a');
+  a.href = resumeLink;
+  a.download = "Nikhil-Khemani-Resume-FullStackWebDeveloper.pdf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function downloadResume1() {
+  // Open the resume in a new tab
+  const resumeLink = document.getElementById("resume-link-1").href;
+  window.open(resumeLink, "_blank");
+  
+  // Download the resume
+  const a = document.createElement('a');
+  a.href = resumeLink;
+  a.download = "Nikhil-Khemani-Resume-FullStackWebDeveloper.pdf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
