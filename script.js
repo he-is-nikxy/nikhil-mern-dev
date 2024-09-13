@@ -521,7 +521,7 @@ function downloadResume() {
   // Open the resume in a new tab
   const resumeLink = document.getElementById("resume-link").href;
   window.open(resumeLink, "_blank");
-  
+
   // Download the resume
   const a = document.createElement('a');
   a.href = resumeLink;
@@ -535,7 +535,7 @@ function downloadResume1() {
   // Open the resume in a new tab
   const resumeLink = document.getElementById("resume-link-1").href;
   window.open(resumeLink, "_blank");
-  
+
   // Download the resume
   const a = document.createElement('a');
   a.href = resumeLink;
