@@ -1466,7 +1466,12 @@ body {
   margin-left: 20px;
 }
 
-.contact-container form textarea {
+.contact-container form div {
+  width: 85%;
+  overflow: hidden;
+}
+
+.contact-container form div textarea {
   background: none;
   border: none;
   border-bottom: 2px solid #000;
@@ -1474,8 +1479,7 @@ body {
   font-size: 1.2rem;
   padding: 10px;
   outline: none;
-  min-width: 85%;
-  max-width: 85%;
+  width: 95%;
   min-height: 6rem;
   max-height: 6rem;
   font-family: "Poppins", sans-serif;
@@ -1485,7 +1489,7 @@ body {
   margin-left: 20px;
 }
 
-.contact-container form textarea::placeholder {
+.contact-container form div textarea::placeholder {
   color: #000;
 }
 
@@ -1497,7 +1501,7 @@ textarea::-webkit-scrollbar-thumb {
   background-color: rgba(194, 194, 194, 0.713);
 }
 
-.contact-container form #button {
+.contact-container form div #button {
   border: none;
   background: #0a3cce;
   border-radius: 5px;
@@ -1512,9 +1516,10 @@ textarea::-webkit-scrollbar-thumb {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
+  margin-left: 20px;
 }
 
-.contact-container form #button:hover {
+.contact-container form div #button:hover {
   color: #02268e;
   background-color: white;
   border: 2px solid #02268e;
