@@ -1025,15 +1025,16 @@ body {
 
 #page11 {
   position: relative;
-  height: 200vh;
+  height: 250vh;
   width: 100vw;
   background-color: #fff;
   font-family: a;
+  overflow: hidden;
 }
 
 #page11>h1 {
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 10%;
   font-size: 4vw;
   color: #000;
@@ -1043,10 +1044,10 @@ body {
 
 .page11-inner {
   display: flex;
-  top: 15%;
+  top: 10%;
   position: relative;
   margin-bottom: 2vw;
-  height: 18%;
+  height: 15%;
   width: 100%;
 }
 
