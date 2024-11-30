@@ -1487,6 +1487,7 @@ body {
   font-style: normal;
   margin-top: 1rem;
   margin-left: 20px;
+  resize: none;
 }
 
 .contact-container form div textarea::placeholder {
