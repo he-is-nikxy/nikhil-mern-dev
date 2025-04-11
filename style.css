@@ -512,7 +512,7 @@ body {
 }
 
 .bdImg>img {
-  height: 220px;
+  height: 22vw;
   object-fit: cover;
 }
 
@@ -1029,7 +1029,7 @@ body {
   width: 100vw;
   background-color: #fff;
   font-family: a;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #page11>h1 {
@@ -1060,10 +1060,15 @@ body {
   overflow: hidden;
 }
 
-.left11>img {
+.left11>a>img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.left11>a>img:hover {
+  height: 110%;
+  transition: all ease-in-out .5s;
 }
 
 .right11 {
